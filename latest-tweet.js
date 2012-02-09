@@ -1,7 +1,7 @@
 	//set up div at end an element with id of "twitter"
 	$('<div id="tweet"></div>').appendTo('#twitter');
 	//start progress animation
-	$('#tweet').append('<p><img src="resume/images/ajax-loader.gif" alt="progress indicator" />connecting to Twitter&hellip; </p>');
+	$('#tweet').append('<p><img src="progress.gif" alt="progress indicator" />connecting to Twitter&hellip; </p>');
 	 // remove progress animation after 10 seconds
 	var timeoutID = setTimeout("$('#tweet').children().fadeOut(100);",10000);
 	//get up to 20 tweets
