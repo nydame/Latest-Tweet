@@ -1,4 +1,3 @@
 Welcome!
-Latest Tweet is a project I'm starting off as JavaScript code (using some jQuery) I wrote to display the latest tweet of a given user on a website.  Retweets and replies (i.e., tweets starting with "@") are ignored. Eventually a WordPress plugin will be developed. 
-To use, just copy contents of latest-tweet.js to wherever you have your jQuery code (e.g., inside document.ready()), plus download the gif file to display a simple progress indicator while tweet is being fetched. 
-Felicia Betancourt, 8 Feb 2012
+Latest Tweet is an extremely simple jQuery plugin that displays the latest tweet of a given entity on Twitter on a website.  The username and number of tweets to search for a valid tweet can be supplied by user of plugin.  Valid tweets are neither retweets nor replies (i.e., tweets starting with "@"). Eventually a WordPress plugin will be developed. 
+To use, (1) create a div with id="twitter" in your markup to contain the tweet, and (2) link to latest-tweet.js.  Be sure to wait to trigger the script until after the document has loaded.
