@@ -6,6 +6,13 @@
 		var $orig = this;
 		var tweetString = "",
 		tweetUrl = 'http://api.twitter.com/1/statuses/user_timeline.json?callback=?';
+
+		// Source: http://stackoverflow.com/a/37687/27736
+		function replaceURLWithHTMLLinks(text) {
+		    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+		    return text.replace(exp,"<a href='$1'>$1</a>"); 
+		}
+
 		function tweetFailHandler() {
 			if(document.getElementById('twitter')) {
 				$('#twitter').hide();
@@ -39,6 +46,7 @@
 			tweetString += data[i].text + dateString;
 			//finally, display tweet and return caller
 			if( tweetString !== "" && document.getElementById('twitter') ) {
+				tweetString = replaceURLWithHTMLLinks(tweetString);
 				$('#twitter').empty();
 				$('<p class="ltw-status"><span>Latest Tweet</span> </p>').appendTo('#twitter');
 				$('#twitter p.ltw-status').append(tweetString);
@@ -56,6 +64,6 @@
 
 //call plugin using no-conflict wrapper recommended in WP Codex
 jQuery(document).ready(function($) {
-    // $() will work as an alias for jQuery() inside of this function
+	// $() will work as an alias for jQuery() inside of this function
 	$(document).latestTweet(); //default username and number to search
 });
