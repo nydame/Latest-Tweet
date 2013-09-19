@@ -39,7 +39,7 @@
 			//1st turn date of latest tweet into an array of its components
 			try {
 				d1 = (data[i].created_at).split(' ');
-				dateString += ' &mdash;&nbsp;'  + d1[0] + ' ' + d1[1] + ' ' + d1[2] + ', ' + d1[5];
+				dateString += '<span class="ltw-date"> &mdash;&nbsp;'  + d1[0] + ' ' + d1[1] + ' ' + d1[2] + ', ' + d1[5] + '</span>';
 			} catch(e2) {
 				tweetFailHandler();
 			}
@@ -48,7 +48,7 @@
 			if( tweetString !== "" && document.getElementById('twitter') ) {
 				tweetString = replaceURLWithHTMLLinks(tweetString);
 				$('#twitter').empty();
-				$('<p class="ltw-status"><span>Latest Tweet</span> </p>').appendTo('#twitter');
+				$('<p class="ltw-status"><span class="ltw-header">Latest Tweet</span> </p>').appendTo('#twitter');
 				$('#twitter p.ltw-status').append(tweetString);
 			}
 		} //end tweetHandler 
